@@ -103,9 +103,9 @@ required = risk_rating.replace({
     "Medium": 20,
     "High": 40,
     "Very High": 60
-})
+}).astype(float)
 
-coverage = (counts / required * 100).round(0)
+coverage = (counts / required * 100).round(0).astype(float)
 
 st.markdown("### Synthetic Test Data")
 st.dataframe(df, use_container_width=True)
